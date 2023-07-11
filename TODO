@@ -1,0 +1,20 @@
+
+Todo:
+  ☐ Create repo on github so i dont lose my declarations!!
+  ☐ Create base abstract State Class
+  ☐ Create State Manager from snkrx in ts
+  ☐ Create Random class from snkrx engine but in typescript
+  ☐ Create color class
+  ☐ Create asset management class
+  ☐ Recreate Stalker-X camera class in ts
+  ☐ Create Graphics utilites class
+  ☐ Create all the objects in objects/ folder
+  ☐ Research how to make a more peformant trail effect
+  ☐ Manage the bump library and create a class for handling collisions
+  ☐ Create the lightning effect from https://gamedevelopment.tutsplus.com/how-to-generate-shockingly-good-2d-lightning-effects--gamedev-2681t
+  ☐ Create input class in ts for ease of use.
+  ☐ Recreate push but on tyepscript for ease of use
+
+Misc:
+  ☐ Create bindings for the batteries lib
+  ☐ Create scripts for building the game efortellesly

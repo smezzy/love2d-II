@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "lua-types": "^2.13.1",
+    "typescript-to-lua": "^1.16.3"
+  },
+  "dependencies": {
+    "love-typescript-definitions": "^0.24.3"
+  },
+  "scripts": {
+    "build": "tstl -p tsconfig.json",
+    "watch": "npx tstl -p .\\tsconfig.json --watch",
+    "watchCopies": "npx cpx 'assets/**/*' 'builds/assets' --watch"
+  }
+}
