@@ -1,8 +1,9 @@
 import { Spring } from "fucciboiGDX/objects/spring";
 import { Group } from "./group";
 import * as Timer from "hump";
+import { IUpdatable } from "./updatable";
 
-export abstract class GameObject {
+export abstract class GameObject implements IUpdatable {
     public x: number = 0;
     public y: number = 0;
     public angle: number = 0;
@@ -16,16 +17,16 @@ export abstract class GameObject {
 
     public timer: Timer = Timer();
     protected spring: Spring = new Spring();
-    protected group?: Group;
+    // protected group?: Group<GameObject>;
 
-    constructor(x: number, y: number, group?: Group) {
+    constructor(x: number, y: number, group?: Group<GameObject>) {
         this.x = x;
         this.y = y;
 
-        if (group !== undefined) {
-            group.add(this);
-            this.group = group;
-        }
+        // if (group !== undefined) {
+        //     group.add(this);
+        //     this.group = group;
+        // }
     }
 
     update(dt: number) {

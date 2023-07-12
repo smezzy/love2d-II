@@ -1,7 +1,7 @@
 import { GameObject } from "./gameobject";
 
-export class Group {
-    private objects: Array<GameObject> = [];
+export class Group<T extends GameObject> {
+    private objects: Array<T> = [];
 
     constructor() { }
 
@@ -17,11 +17,11 @@ export class Group {
         }
     }
 
-    add(obj: GameObject) {
+    add(obj: T) {
         this.objects.push(obj);
     }
 
-    forEach(cb: (o: GameObject) => void) {
+    forEach(cb: (o: T) => void) {
         for (const obj of this.objects) {
             cb(obj);
         }

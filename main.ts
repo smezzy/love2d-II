@@ -1,10 +1,17 @@
 import { Group } from "fucciboiGDX/game/group"
+import { State } from "fucciboiGDX/game/state";
+import { StateManager } from "fucciboiGDX/game/statemanager";
 import { Circle } from "fucciboiGDX/objects/circle";
-import { getDimensions } from "love.graphics";
+import { Arena } from "game/states/arena";
 
-const group = new Group()
+love.graphics.setNewFont('assets/fonts/PixelOperator.ttf', 16);
+
+const group = new Group<Circle>();
 
 love.load = () => {
+    const mainState = new StateManager();
+    mainState.add(new Arena("Arena"));
+    mainState.switchState('Arena');
 }
 
 love.update = (dt: number) => {
@@ -15,8 +22,8 @@ love.update = (dt: number) => {
         }
     }
     if (love.keyboard.isDown("a")) {
-        group.forEach((o) => {
-            o.dead = true;
+        group.forEach(o => {
+            o.radius = 10;
         })
     }
     group.update(dt);
@@ -24,5 +31,5 @@ love.update = (dt: number) => {
 
 love.draw = () => {
     group.draw();
-    love.graphics.print(`${love.timer.getFPS()}`, 0, 0);
+    love.graphics.print(`vsfd aqui eh rock ${love.timer.getFPS()}`, 0, 0);
 }
