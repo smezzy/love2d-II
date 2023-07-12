@@ -1,7 +1,7 @@
 import { Spring } from "fucciboiGDX/objects/spring";
 import { Group } from "./group";
 import * as Timer from "hump";
-import { IUpdatable } from "./updatable";
+import { IUpdatable } from "../updatable";
 
 export abstract class GameObject implements IUpdatable {
     public x: number = 0;

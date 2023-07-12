@@ -1,4 +1,6 @@
-export abstract class State {
+import { IUpdatable } from "../updatable";
+
+export abstract class State implements IUpdatable {
     private _name: string;
     public get name(): string { return this._name }
     private set name(v: string) { this._name = v }
@@ -14,6 +16,8 @@ export abstract class State {
     private _persistentDraw: boolean;
     public get persistentDraw(): boolean { return this._persistentDraw }
     protected set persistentDraw(bool: boolean) { this._persitentUpdate = bool }
+
+    public dead: boolean;
 
     constructor(name: string) {
         this.name = name;

@@ -1,6 +1,6 @@
-import { GameObject } from "./gameobject";
+import { IUpdatable } from "../updatable";
 
-export class Group<T extends GameObject> {
+export class Group<T extends IUpdatable> {
     private objects: Array<T> = [];
 
     constructor() { }
